@@ -30,7 +30,7 @@ function Navbar() {
     );
   };
   return (
-    <Flex>
+    <Flex display={{ base: "none", md: "none", lg: "flex" }}>
       {data.map((item) => {
         if (item.target.length > 0)
           return (
