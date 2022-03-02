@@ -50,6 +50,7 @@ function Header() {
         borderBottom: "1px solid",
         borderColor: "gray.200",
         background: "white",
+        zIndex: "100",
         ...stickyStyle,
       }}
     >

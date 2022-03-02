@@ -8,6 +8,31 @@ const components = {
         color: "rgb(5, 15, 25)",
         textAlign: "center",
       },
+      body2: {
+        fontSize: "18px",
+        lineHeight: "1.3",
+        color: "rgb(45,45,45)",
+      },
+      h1: {
+        fontSize: "62px",
+        fontWeight: 700,
+        lineHeight: "1.15",
+      },
+      h2: {
+        fontSize: "32px",
+        fontWeight: 700,
+        lineHeight: "1.3",
+      },
+      h3: {
+        fontSize: "20px",
+        fontWeight: 700,
+        lineHeight: "1.4",
+      },
+      p: {
+        fontSize: "16px",
+        fontWeight: 400,
+        lineHeight: "1.6",
+      },
     },
   },
   Button: {
