@@ -69,339 +69,335 @@ const features3 = [
 ];
 
 function Home() {
-  const section1 = (
-    <Flex p={{ base: "24px", md: "24px 56px" }} align="center">
-      <Flex pt="100px" pb="110px" direction="column" w="480px">
-        <Flex color="blue.500" fontWeight="500">
-          <BtcBlue width="24" height="24" />
-          <Text ml="6px">Jump start your portfolio &#10095;</Text>
-        </Flex>
-        <Text as="h1" variant="h1" maxWidth="425px" my="20px">
-          Jump start your crypto portfolio
-        </Text>
-        <Text as="h3" variant="h3" w="100%" mb="32px">
-          Coinbase is the easiest place to buy and sell cryptocurrency. Sign up
-          and get started today.
-        </Text>
+  return (
+    <>
+      <Section1 />
+      <PriceTable />
+      <Section2 />
+      <Section3 />
+      <Section4 />
+      <Section5 />
+      <Section6 />
+    </>
+  );
+}
+export default Home;
 
-        <form>
-          <Flex>
-            <Input
-              placeholder="Email address"
-              size="lg"
-              padding={{ base: "5px", md: "20px" }}
-              height="auto"
-              width="100%"
-            ></Input>
-            <Button
-              ml={{ base: "5px", md: "16px" }}
-              variant="primary"
-              w={{ base: "auto", md: "200px" }}
-              p="24px"
-              fontSize="16px"
-            >
-              Get started
-            </Button>
-          </Flex>
-        </form>
+const Section1 = () => (
+  <Flex p={{ base: "24px", md: "24px 56px" }} align="center">
+    <Flex pt="100px" pb="110px" direction="column" w="480px">
+      <Flex color="blue.500" fontWeight="500">
+        <BtcBlue width="24" height="24" />
+        <Text ml="6px">Jump start your portfolio &#10095;</Text>
       </Flex>
-      <Flex
-        flexGrow="1"
-        pt="40px"
-        pr={{ base: "6px", lg: "24px" }}
-        justify="flex-end"
-        display={{ base: "none", md: "flex" }}
-      >
-        <Phone width="426" height="600" />
-      </Flex>
-    </Flex>
-  );
-  const section2 = (
-    <Flex
-      p="24px"
-      flex="1 0 auto"
-      justify="space-between"
-      direction={{ base: "column", md: "row" }}
-    >
-      <Flex
-        direction="column"
-        maxWidth="100vw"
-        width={{ base: "100%", lg: "350px" }}
-        textAlign={{ base: "center", md: "start" }}
-      >
-        <Text variant="h2" as="h2">
-          Earn up to $13 worth of crypto
-        </Text>
-        <Text my="16px" as="p" variant="p">
-          Discover how specific cryptocurrencies work — and get a bit of each
-          crypto to try out for yourself.
-        </Text>
-        <Button
-          variant="primary"
-          alignSelf={{ base: "center", md: "flex-start" }}
-        >
-          Start earning
-        </Button>
-      </Flex>
-      <Flex direction="column" width={{ base: "auto", lg: "560px" }}>
-        <Flex
-          justify="space-between"
-          align="center"
-          p="24px"
-          transition="box-shadow .6s ease"
-          cursor="pointer"
-          sx={{ "&:hover": { boxShadow: "2xl" } }}
-          minWidth={{ base: "100%", md: "450px" }}
-        >
-          <Image src={ampIcon} width="38px" height="38px" />
-          <Text fontSize="22px" mx="15px">
-            Amp
-          </Text>
-          <Text fontSize="18px" display={{ base: "none", md: "inline-block" }}>
-            AMP
-          </Text>
-          <Text fontSize="16px" color="green.500" flexGrow={1} textAlign="end">
-            Earn $3 AMP
-          </Text>
-        </Flex>
-        <Flex
-          justify="space-between"
-          align="center"
-          p="24px"
-          transition="box-shadow .6s ease"
-          cursor="pointer"
-          sx={{ "&:hover": { boxShadow: "2xl" } }}
-        >
-          <Image src={solIcon} width="38px" height="38px" />
-          <Text fontSize="22px" mx="15px">
-            Stellar Lumens
-          </Text>
-          <Text fontSize="18px" display={{ base: "none", md: "inline-block" }}>
-            XLM
-          </Text>
-          <Text fontSize="16px" color="green.500" flexGrow={1} textAlign="end">
-            Earn $10 XLM
-          </Text>
-        </Flex>
-        <Flex p="24px">
-          <Link fontSize="16px" color="blue.500">
-            View more &#10095;
-          </Link>
-        </Flex>
-      </Flex>
-    </Flex>
-  );
-  const section3 = (
-    <Flex direction="column" textAlign="center" p="24px">
-      <Text variant="h2" as="h2" fontSize="40px" mb="8px">
-        Create your cryptocurrency portfolio today
+      <Text as="h1" variant="h1" maxWidth="425px" my="20px">
+        Jump start your crypto portfolio
       </Text>
-      <Text variant="p" as="p" my="16px">
-        Coinbase has a variety of features that make it the best place to start
-        trading
+      <Text as="h3" variant="h3" w="100%" mb="32px">
+        Coinbase is the easiest place to buy and sell cryptocurrency. Sign up
+        and get started today.
       </Text>
 
-      <Flex
-        mt="64px"
-        direction={{ base: "column", lg: "row-reverse" }}
-        justify="space-between"
-        align={{ base: "center", lg: "normal" }}
-      >
-        <Flex maxWidth="700px">
-          <Image src={screenshot} w="100%" />
-        </Flex>
-        <Flex
-          direction="column"
-          justify="center"
-          mt={{ base: "64px", lg: "0" }}
-        >
-          {features1.map((feat, i) => {
-            const { Icon, title, des } = feat;
-            return (
-              <Flex
-                direction="row"
-                w="100%"
-                position="relative"
-                mb="40px"
-                key={title}
-              >
-                <Flex
-                  w="72px"
-                  h="72px"
-                  bg="white"
-                  boxShadow="xl"
-                  rounded="full"
-                  align="center"
-                  justify="center"
-                  position="absolute"
-                  left="0"
-                  top="0"
-                >
-                  {Icon}
-                </Flex>
-                <Flex
-                  direction="column"
-                  align="flex-start"
-                  justify="center"
-                  ml="95px"
-                  textAlign="start"
-                >
-                  <Text variant="h3" as="h3" mb="12px">
-                    {title}
-                  </Text>
-                  <Text as="p" variant="p" color="gray.500" fontWeight="400">
-                    {des}
-                  </Text>
-                </Flex>
-              </Flex>
-            );
-          })}
-        </Flex>
-      </Flex>
-    </Flex>
-  );
-  const section4 = (
-    <Flex direction="column" textAlign="center" px="24px" py="64px">
-      <Text variant="h2" as="h2" fontSize="40px" mb="8px">
-        The most trusted cryptocurrency platform
-      </Text>
-      <Text variant="p" as="p" my="16px">
-        Here are a few reasons why you should choose Coinbase
-      </Text>
-
-      <Flex
-        mt="64px"
-        direction={{ base: "column", lg: "row" }}
-        justify="space-between"
-        align={{ base: "center", lg: "flex-start" }}
-        flexBasis="auto"
-      >
-        {features2.map(({ title, Icon, des }) => (
-          <Flex
-            direction="column"
-            w="100%"
-            align="center"
-            mt={{ base: "24px", lg: 0 }}
-            p="12px"
-            key={title}
+      <form>
+        <Flex>
+          <Input
+            placeholder="Email address"
+            size="lg"
+            padding={{ base: "5px", md: "20px" }}
+            height="auto"
+            width="100%"
+          ></Input>
+          <Button
+            ml={{ base: "5px", md: "16px" }}
+            variant="primary"
+            w={{ base: "auto", md: "200px" }}
+            p="24px"
+            fontSize="16px"
           >
-            {Icon}
-            <Flex
-              direction="column"
-              align="flex-start"
-              justify="center"
-              textAlign="center"
-            >
-              <Text variant="h3" as="h3" my="12px" w="100%">
-                {title}
-              </Text>
-              <Text as="p" variant="p" color="gray.500" fontWeight="400">
-                {des}
-              </Text>
-            </Flex>
-          </Flex>
-        ))}
-      </Flex>
+            Get started
+          </Button>
+        </Flex>
+      </form>
     </Flex>
-  );
-  const section5 = (
     <Flex
-      direction={{ base: "column", sm: "row" }}
-      justify="space-between"
-      align={{ base: "center", sm: "flex-start" }}
-      flexBasis="auto"
-      py="32px"
-      px={{ md: "68px", base: "16px" }}
-      bg="rgb(0, 82, 255)"
-      color="white"
-      rounded="2xl"
+      flexGrow="1"
+      pt="40px"
+      pr={{ base: "6px", lg: "24px" }}
+      justify="flex-end"
+      display={{ base: "none", md: "flex" }}
     >
-      <Flex direction="column" basis="auto" align="center">
-        <Text fontSize="56px" fontWeight="700" as="div">
-          $547B
+      <Phone width="426" height="600" />
+    </Flex>
+  </Flex>
+);
+const Section2 = () => (
+  <Flex
+    p="24px"
+    flex="1 0 auto"
+    justify="space-between"
+    direction={{ base: "column", md: "row" }}
+  >
+    <Flex
+      direction="column"
+      maxWidth="100vw"
+      width={{ base: "100%", lg: "350px" }}
+      textAlign={{ base: "center", md: "start" }}
+    >
+      <Text variant="h2" as="h2">
+        Earn up to $13 worth of crypto
+      </Text>
+      <Text my="16px" as="p" variant="p">
+        Discover how specific cryptocurrencies work — and get a bit of each
+        crypto to try out for yourself.
+      </Text>
+      <Button
+        variant="primary"
+        alignSelf={{ base: "center", md: "flex-start" }}
+      >
+        Start earning
+      </Button>
+    </Flex>
+    <Flex direction="column" width={{ base: "auto", lg: "560px" }}>
+      <Flex
+        justify="space-between"
+        align="center"
+        p="24px"
+        transition="box-shadow .6s ease"
+        cursor="pointer"
+        sx={{ "&:hover": { boxShadow: "2xl" } }}
+        minWidth={{ base: "100%", md: "450px" }}
+      >
+        <Image src={ampIcon} width="38px" height="38px" />
+        <Text fontSize="22px" mx="15px">
+          Amp
         </Text>
-        <Text variant="p" as="div" color="gray.200">
-          Quarterly volume traded
+        <Text fontSize="18px" display={{ base: "none", md: "inline-block" }}>
+          AMP
+        </Text>
+        <Text fontSize="16px" color="green.500" flexGrow={1} textAlign="end">
+          Earn $3 AMP
         </Text>
       </Flex>
-      <Flex direction="column" basis="auto" align="center">
-        <Text fontSize="56px" fontWeight="700" as="div">
-          100+
+      <Flex
+        justify="space-between"
+        align="center"
+        p="24px"
+        transition="box-shadow .6s ease"
+        cursor="pointer"
+        sx={{ "&:hover": { boxShadow: "2xl" } }}
+      >
+        <Image src={solIcon} width="38px" height="38px" />
+        <Text fontSize="22px" mx="15px">
+          Stellar Lumens
         </Text>
-        <Text variant="p" as="div">
-          Countries supported
+        <Text fontSize="18px" display={{ base: "none", md: "inline-block" }}>
+          XLM
+        </Text>
+        <Text fontSize="16px" color="green.500" flexGrow={1} textAlign="end">
+          Earn $10 XLM
         </Text>
       </Flex>
-      <Flex direction="column" basis="auto" align="center">
-        <Text fontSize="56px" fontWeight="700" as="div">
-          89+M
-        </Text>
-        <Text variant="p" as="div">
-          Verified users
-        </Text>
+      <Flex p="24px">
+        <Link fontSize="16px" color="blue.500">
+          View more &#10095;
+        </Link>
       </Flex>
     </Flex>
-  );
-  const section6 = (
-    <Flex direction="column" textAlign="center" px="24px" py="64px">
-      <Text variant="h2" as="h2" fontSize="40px" mb="8px">
-        Get started in a few minutes
-      </Text>
-      <Text variant="p" as="p" my="16px">
-        Coinbase supports a variety of the most popular digital currencies.
-      </Text>
+  </Flex>
+);
+const Section3 = () => (
+  <Flex direction="column" textAlign="center" p="24px">
+    <Text variant="h2" as="h2" fontSize="40px" mb="8px">
+      Create your cryptocurrency portfolio today
+    </Text>
+    <Text variant="p" as="p" my="16px">
+      Coinbase has a variety of features that make it the best place to start
+      trading
+    </Text>
 
-      <Flex
-        mt="64px"
-        direction={{ base: "column", lg: "row" }}
-        justify="space-between"
-        align={{ base: "center", lg: "flex-start" }}
-        flexBasis="auto"
-      >
-        {features3.map(({ title, Icon }, index) => {
+    <Flex
+      mt="64px"
+      direction={{ base: "column", lg: "row-reverse" }}
+      justify="space-between"
+      align={{ base: "center", lg: "normal" }}
+    >
+      <Flex maxWidth="700px">
+        <Image src={screenshot} w="100%" />
+      </Flex>
+      <Flex direction="column" justify="center" mt={{ base: "64px", lg: "0" }}>
+        {features1.map((feat, i) => {
+          const { Icon, title, des } = feat;
           return (
-            <React.Fragment key={title}>
+            <Flex
+              direction="row"
+              w="100%"
+              position="relative"
+              mb="40px"
+              key={title}
+            >
               <Flex
-                direction="column"
-                w="100%"
+                w="72px"
+                h="72px"
+                bg="white"
+                boxShadow="xl"
+                rounded="full"
                 align="center"
-                mt={{ base: "24px", lg: 0 }}
-                p="12px"
+                justify="center"
+                position="absolute"
+                left="0"
+                top="0"
               >
                 {Icon}
-                <Flex
-                  direction="column"
-                  align="flex-start"
-                  justify="center"
-                  textAlign="center"
-                >
-                  <Text variant="h3" as="h3" my="12px" w="100%">
-                    {title}
-                  </Text>
-                </Flex>
               </Flex>
-              {(index === 0 || index === 1) && (
-                <Box
-                  sx={{ height: "1px", bg: "gray.400", w: "55%", mt: "20px" }}
-                ></Box>
-              )}
-            </React.Fragment>
+              <Flex
+                direction="column"
+                align="flex-start"
+                justify="center"
+                ml="95px"
+                textAlign="start"
+              >
+                <Text variant="h3" as="h3" mb="12px">
+                  {title}
+                </Text>
+                <Text as="p" variant="p" color="gray.500" fontWeight="400">
+                  {des}
+                </Text>
+              </Flex>
+            </Flex>
           );
         })}
       </Flex>
     </Flex>
-  );
-  return (
-    <>
-      {section1}
-      <PriceTable />
-      {section2}
-      {section3}
-      {section4}
-      {section5}
-      {section6}
-    </>
-  );
-}
+  </Flex>
+);
+const Section4 = () => (
+  <Flex direction="column" textAlign="center" px="24px" py="64px">
+    <Text variant="h2" as="h2" fontSize="40px" mb="8px">
+      The most trusted cryptocurrency platform
+    </Text>
+    <Text variant="p" as="p" my="16px">
+      Here are a few reasons why you should choose Coinbase
+    </Text>
 
-export default Home;
+    <Flex
+      mt="64px"
+      direction={{ base: "column", lg: "row" }}
+      justify="space-between"
+      align={{ base: "center", lg: "flex-start" }}
+      flexBasis="auto"
+    >
+      {features2.map(({ title, Icon, des }) => (
+        <Flex
+          direction="column"
+          w="100%"
+          align="center"
+          mt={{ base: "24px", lg: 0 }}
+          p="12px"
+          key={title}
+        >
+          {Icon}
+          <Flex
+            direction="column"
+            align="flex-start"
+            justify="center"
+            textAlign="center"
+          >
+            <Text variant="h3" as="h3" my="12px" w="100%">
+              {title}
+            </Text>
+            <Text as="p" variant="p" color="gray.500" fontWeight="400">
+              {des}
+            </Text>
+          </Flex>
+        </Flex>
+      ))}
+    </Flex>
+  </Flex>
+);
+const Section5 = () => (
+  <Flex
+    direction={{ base: "column", sm: "row" }}
+    justify="space-between"
+    align={{ base: "center", sm: "flex-start" }}
+    flexBasis="auto"
+    py="32px"
+    px={{ md: "68px", base: "16px" }}
+    bg="rgb(0, 82, 255)"
+    color="white"
+    rounded="2xl"
+  >
+    <Flex direction="column" basis="auto" align="center">
+      <Text fontSize="56px" fontWeight="700" as="div">
+        $547B
+      </Text>
+      <Text variant="p" as="div" color="gray.200">
+        Quarterly volume traded
+      </Text>
+    </Flex>
+    <Flex direction="column" basis="auto" align="center">
+      <Text fontSize="56px" fontWeight="700" as="div">
+        100+
+      </Text>
+      <Text variant="p" as="div">
+        Countries supported
+      </Text>
+    </Flex>
+    <Flex direction="column" basis="auto" align="center">
+      <Text fontSize="56px" fontWeight="700" as="div">
+        89+M
+      </Text>
+      <Text variant="p" as="div">
+        Verified users
+      </Text>
+    </Flex>
+  </Flex>
+);
+const Section6 = () => (
+  <Flex direction="column" textAlign="center" px="24px" py="64px">
+    <Text variant="h2" as="h2" fontSize="40px" mb="8px">
+      Get started in a few minutes
+    </Text>
+    <Text variant="p" as="p" my="16px">
+      Coinbase supports a variety of the most popular digital currencies.
+    </Text>
+
+    <Flex
+      mt="64px"
+      direction={{ base: "column", lg: "row" }}
+      justify="space-between"
+      align={{ base: "center", lg: "flex-start" }}
+      flexBasis="auto"
+    >
+      {features3.map(({ title, Icon }, index) => {
+        return (
+          <React.Fragment key={title}>
+            <Flex
+              direction="column"
+              w="100%"
+              align="center"
+              mt={{ base: "24px", lg: 0 }}
+              p="12px"
+            >
+              {Icon}
+              <Flex
+                direction="column"
+                align="flex-start"
+                justify="center"
+                textAlign="center"
+              >
+                <Text variant="h3" as="h3" my="12px" w="100%">
+                  {title}
+                </Text>
+              </Flex>
+            </Flex>
+            {(index === 0 || index === 1) && (
+              <Box
+                sx={{ height: "1px", bg: "gray.400", w: "55%", mt: "20px" }}
+              ></Box>
+            )}
+          </React.Fragment>
+        );
+      })}
+    </Flex>
+  </Flex>
+);
