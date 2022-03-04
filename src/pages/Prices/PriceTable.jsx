@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 import {
   Table,
   Thead,
@@ -25,6 +25,7 @@ import { ArrowDownIcon, ArrowUpIcon, ArrowUpDownIcon } from "@chakra-ui/icons";
 import { useSearchParams } from "react-router-dom";
 
 function PriceTable() {
+  const navigate = useNavigate();
   const [coins, setCoins] = React.useState([]);
   const [change, setChange] = React.useState("priceChange1h");
   const [smallThan760] = useMediaQuery("(max-width: 768px)");
@@ -69,6 +70,12 @@ function PriceTable() {
 
   const handleChangePrice = (price) => {
     setChange(price);
+  };
+  const handleNavigate = (id) => {
+    navigate(`/price/${id}`, { replace: true });
+  };
+  const handleClickTradeButton = (e, id) => {
+    e.stopPropagation();
   };
 
   const renderCoinsTable = React.useCallback(() => {
@@ -129,9 +136,10 @@ function PriceTable() {
           w="100%"
           p={1}
           flexBasis={"auto"}
-          key={coin.name}
           borderBottom="1px solid"
           borderColor="gray.200"
+          key={coin.id}
+          onClick={() => handleNavigate(coin.id)}
         >
           <HStack
             overflow="hidden"
@@ -203,7 +211,7 @@ function PriceTable() {
       return coins.map((coin, index) => {
         const priceChange = coin[change];
         return (
-          <Tr key={coin.id}>
+          <Tr key={coin.id} onClick={() => handleNavigate(coin.id)}>
             <Td>
               <Flex align="center">
                 <Image src={coin.icon} w="36px" h="36px" />
@@ -250,7 +258,11 @@ function PriceTable() {
               )}
             </Td>
             <Td>
-              <Link href={coin.websiteUrl} target="_blank">
+              <Link
+                href={coin.websiteUrl}
+                target="_blank"
+                onClick={(e) => handleClickTradeButton(e, coin.id)}
+              >
                 <Button colorScheme="blue" size="sm" fontWeight={400}>
                   trade
                 </Button>

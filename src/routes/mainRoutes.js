@@ -1,6 +1,7 @@
 import DefaultLayout from "../layout/default";
 import Home from "../pages/Home";
 import Prices from "../pages/Prices";
+import Price from "../pages/Price";
 const mainRoutes = {
   path: "/",
   element: <DefaultLayout />,
@@ -12,6 +13,10 @@ const mainRoutes = {
     {
       path: "/prices",
       element: <Prices />,
+    },
+    {
+      path: "/price/:id",
+      element: <Price />,
     },
   ],
 };

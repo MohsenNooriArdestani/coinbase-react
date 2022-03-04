@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import {
   Table,
@@ -20,7 +21,15 @@ import {
 import { ArrowDownIcon, ArrowUpIcon, ArrowUpDownIcon } from "@chakra-ui/icons";
 
 function PriceTable() {
+  const navigate = useNavigate();
   const [coins, setCoins] = React.useState([]);
+
+  const handleNavigate = (id) => {
+    navigate(`/price/${id}`, { replace: true });
+  };
+  const handleClickTradeButton = (e, id) => {
+    e.stopPropagation();
+  };
   React.useEffect(() => {
     const abort = new AbortController();
     const fetchCoins = async () => {
@@ -43,7 +52,7 @@ function PriceTable() {
   const renderCoins = () => {
     if (coins.length > 0) {
       return coins.map((coin, index) => (
-        <Tr key={coin.id}>
+        <Tr key={coin.id} onClick={() => handleNavigate(coin.id)}>
           <Td>
             <Text variant="body2">{index + 1}</Text>
           </Td>
@@ -78,7 +87,11 @@ function PriceTable() {
             )}
           </Td>
           <Td>
-            <Link href={coin.websiteUrl} target="_blank">
+            <Link
+              href={coin.websiteUrl}
+              target="_blank"
+              onClick={(e) => handleClickTradeButton(e, coin.id)}
+            >
               <Button colorScheme="green">Site</Button>
             </Link>
           </Td>
