@@ -58,7 +58,7 @@ const Footer = () => (
         spacing={{ base: "12", md: "8" }}
       >
         <Stack direction="row" spacing="8">
-          <Stack spacing="4" minW="36" flex="1">
+          <Stack spacing="4" minW={{ base: "30", sm: "36" }} flex="1">
             <Text fontSize="sm" fontWeight="semibold" color="subtle">
               Product
             </Text>
@@ -68,7 +68,7 @@ const Footer = () => (
               <Button variant="link">Use Cases</Button>
             </Stack>
           </Stack>
-          <Stack spacing="4" minW="36" flex="1">
+          <Stack spacing="4" minW={{ base: "30", sm: "36" }} flex="1">
             <Text fontSize="sm" fontWeight="semibold" color="subtle">
               Legal
             </Text>

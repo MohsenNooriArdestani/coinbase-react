@@ -6,7 +6,6 @@ const components = {
         fontWeight: 500,
         lineHeight: "16px",
         color: "rgb(5, 15, 25)",
-        textAlign: "center",
       },
       body2: {
         fontSize: "18px",

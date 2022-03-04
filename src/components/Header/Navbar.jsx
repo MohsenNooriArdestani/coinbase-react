@@ -5,7 +5,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { Flex, Text, Link } from "@chakra-ui/react";
 
 const data = [
-  { text: "Prices", target: "/", children: [] },
+  { text: "Prices", target: "/prices", children: [] },
   { text: "Learn", target: "/", children: [] },
   { text: "Individuals", target: "", children: [] },
   { text: "Businesses", target: "", children: [] },
