@@ -20,7 +20,6 @@ to {
 `;
 
 function Header() {
-  console.log("helo");
   const [sticky, setSticky] = React.useState(false);
 
   const handleScroll = () => {

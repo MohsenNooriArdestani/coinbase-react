@@ -21,7 +21,6 @@ import navbarData from "./navbarData";
 
 function DrawerMenu() {
   const [smallThan760] = useMediaQuery("(max-width: 768px)");
-
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   if (!smallThan760) return null;
@@ -46,16 +45,32 @@ function DrawerMenu() {
           <DrawerBody p="0">
             <VStack w="100%">
               {navbarData.map((item) => {
-                return (
-                  <Link
-                    to={item.target}
-                    as={ReactRouterLink}
-                    w="100%"
-                    h="auto"
-                    onClick={onClose}
-                  >
+                if (!!item.target) {
+                  return (
+                    <Link
+                      to={item.target}
+                      as={ReactRouterLink}
+                      w="100%"
+                      h="auto"
+                      onClick={onClose}
+                      key={item.text}
+                    >
+                      <Button
+                        width="100%"
+                        height={12}
+                        bg="white"
+                        fontWeight={400}
+                        justifyContent="start"
+                      >
+                        {item.text}
+                      </Button>
+                    </Link>
+                  );
+                } else {
+                  return (
                     <Button
                       width="100%"
+                      key={item.text}
                       height={12}
                       bg="white"
                       fontWeight={400}
@@ -63,26 +78,26 @@ function DrawerMenu() {
                     >
                       {item.text}
                     </Button>
-                  </Link>
-                );
+                  );
+                }
               })}
             </VStack>
             <VStack mt={6} w="100%" p={5} spacing={3}>
-              <Button variant="primary" w="100%">
-                Login
-              </Button>
-              <Button variant="primary" w="100%">
-                Register
-              </Button>
+              <Link as={ReactRouterLink} to="/login" w="100%">
+                <Button variant="primary" w="100%">
+                  Login
+                </Button>
+              </Link>
+
+              <Link as={ReactRouterLink} to="/signup" w="100%">
+                <Button variant="primary" w="100%">
+                  Register
+                </Button>
+              </Link>
             </VStack>
           </DrawerBody>
 
-          <DrawerFooter>
-            {/* <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="blue">Save</Button> */}
-          </DrawerFooter>
+          <DrawerFooter></DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>
