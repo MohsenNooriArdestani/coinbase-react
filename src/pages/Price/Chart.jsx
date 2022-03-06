@@ -1,7 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-
-import { Button, Text, VStack, HStack, Flex } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 
