@@ -72,7 +72,7 @@ function PriceTable() {
     setChange(price);
   };
   const handleNavigate = (id) => {
-    navigate(`/price/${id}`, { replace: true });
+    navigate(`/price/${id}`);
   };
   const handleClickTradeButton = (e, id) => {
     e.stopPropagation();
