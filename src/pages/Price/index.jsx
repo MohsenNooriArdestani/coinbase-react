@@ -15,6 +15,7 @@ import {
   StatLabel,
   StatHelpText,
   StatArrow,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
@@ -23,12 +24,15 @@ import { ReactComponent as DiamondIcon } from "assets/icons/diamond.svg";
 import currencies from "../../util/currencies";
 import Search from "../../components/Search";
 import Chart from "./Chart";
+import LoginModal from "../../components/LoginModal";
 
 function Price() {
   const [coin, setCoin] = React.useState({});
   const [currency, setCurrency] = React.useState("USD");
   const [isLoading, setIsLoading] = React.useState(true);
   const { id } = useParams();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   React.useEffect(() => {
     if (!coin.price) setIsLoading(true);
     const abortController = new AbortController();
@@ -44,6 +48,10 @@ function Price() {
     return () => abortController.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, currency]);
+
+  const handleClickBuyButton = (e) => {
+    onOpen();
+  };
 
   const renderTop = React.useCallback(
     () => (
@@ -92,6 +100,7 @@ function Price() {
   if (isLoading) return <>Loading</>;
   return (
     <>
+      <LoginModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
       {renderTop()}
       <Grid templateColumns={{ base: "1fr", md: "1fr 350px" }} gap={5} p={6}>
         <GridItem>
@@ -185,8 +194,13 @@ function Price() {
               Create a Coinbase account to buy and sell {coin.name} on the most
               secure crypto exchange.
             </Text>
-            <Button variant="primary" size="xl" w="100%">
-              {coin.name}
+            <Button
+              variant="primary"
+              size="xl"
+              w="100%"
+              onClick={handleClickBuyButton}
+            >
+              Buy {coin.name}
             </Button>
           </VStack>
         </GridItem>

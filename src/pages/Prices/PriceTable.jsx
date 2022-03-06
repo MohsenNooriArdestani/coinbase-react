@@ -12,23 +12,26 @@ import {
   Text,
   Button,
   Box,
-  Link,
   Skeleton,
   SkeletonCircle,
   SkeletonText,
   HStack,
   useMediaQuery,
   VStack,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { ArrowDownIcon, ArrowUpIcon, ArrowUpDownIcon } from "@chakra-ui/icons";
 
 import { useSearchParams } from "react-router-dom";
+import LoginModal from "../../components/LoginModal";
 
 function PriceTable() {
   const navigate = useNavigate();
   const [coins, setCoins] = React.useState([]);
   const [change, setChange] = React.useState("priceChange1h");
   const [smallThan760] = useMediaQuery("(max-width: 768px)");
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   let [searchParams, setSearchParams] = useSearchParams();
   const maxPage = 16;
   const minPage = 1;
@@ -76,6 +79,7 @@ function PriceTable() {
   };
   const handleClickTradeButton = (e, id) => {
     e.stopPropagation();
+    onOpen();
   };
 
   const renderCoinsTable = React.useCallback(() => {
@@ -258,15 +262,14 @@ function PriceTable() {
               )}
             </Td>
             <Td>
-              <Link
-                href={coin.websiteUrl}
-                target="_blank"
+              <Button
+                colorScheme="blue"
+                size="sm"
+                fontWeight={400}
                 onClick={(e) => handleClickTradeButton(e, coin.id)}
               >
-                <Button colorScheme="blue" size="sm" fontWeight={400}>
-                  trade
-                </Button>
-              </Link>
+                trade
+              </Button>
             </Td>
           </Tr>
         );
@@ -369,6 +372,7 @@ function PriceTable() {
 
   return (
     <>
+      <LoginModal isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
       <Box maxWidth="100vw" p={{ base: "64px 12px", md: "64px 24px" }}>
         <HStack w="100%" justify="start" mb="4" spa={4}>
           {["priceChange1h", "priceChange1d", "priceChange1w"].map((date) => (
