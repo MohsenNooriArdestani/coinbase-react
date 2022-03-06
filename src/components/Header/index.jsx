@@ -7,6 +7,8 @@ import { keyframes } from "@emotion/react";
 import { ReactComponent as Logo } from "assets/images/logo.svg";
 import Navbar from "./Navbar";
 import Buttons from "./Buttons";
+import DrawerMenu from "./DrawerMenu";
+// import Drawer from "./Drawer";
 
 const stickyAnimation = keyframes`
 from {
@@ -18,7 +20,9 @@ to {
 `;
 
 function Header() {
+  console.log("helo");
   const [sticky, setSticky] = React.useState(false);
+
   const handleScroll = () => {
     if (window.scrollY > 60) {
       setSticky(true);
@@ -61,6 +65,7 @@ function Header() {
         height="66px"
         padding="0 20px"
       >
+        <DrawerMenu />
         <Flex align="center">
           <Link to="/">
             <Logo width="112" height="20" />

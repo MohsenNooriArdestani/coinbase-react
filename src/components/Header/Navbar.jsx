@@ -4,14 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 import { Flex, Text, Link } from "@chakra-ui/react";
 
-const data = [
-  { text: "Prices", target: "/prices", children: [] },
-  { text: "Learn", target: "/", children: [] },
-  { text: "Individuals", target: "", children: [] },
-  { text: "Businesses", target: "", children: [] },
-  { text: "Developers", target: "", children: [] },
-  { text: "Company", target: "", children: [] },
-];
+import navbarData from "./navbarData";
 
 function Navbar() {
   const renderText = (text) => {
@@ -22,7 +15,7 @@ function Navbar() {
         display="flex"
         alignItems="center"
         height="100%"
-        mx="18px"
+        mx={{ base: "5px", lg: "18px" }}
         userSelect="none"
       >
         {text}
@@ -30,8 +23,8 @@ function Navbar() {
     );
   };
   return (
-    <Flex display={{ base: "none", md: "none", lg: "flex" }}>
-      {data.map((item) => {
+    <Flex display={{ base: "none", md: "flex", lg: "flex" }}>
+      {navbarData.map((item) => {
         if (item.target.length > 0)
           return (
             <Link key={item.text} to={item.target} as={RouterLink}>
