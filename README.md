@@ -3,7 +3,7 @@
 This project created with React.js and Chakra-UI.
 
 
-## [https://abdalicodes.github.io/coinbase-react/](Live Demo)
+## [Live Demo](https://abdalicodes.github.io/coinbase-react/)
 
 ## Available Scripts
 
