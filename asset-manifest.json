@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/coinbase-react/static/css/main.52144f7f.css",
+    "main.js": "/coinbase-react/static/js/main.a646cdea.js",
+    "static/media/screenshot.webp": "/coinbase-react/static/media/screenshot.6ffc81153d3b1970f5a0.webp",
+    "static/media/banner.webp": "/coinbase-react/static/media/banner.9b8b54316f0687f79fb3.webp",
+    "static/media/phone.svg": "/coinbase-react/static/media/phone.28b175dc84e54ebe8308fe0f5a0b717c.svg",
+    "static/media/logo.svg": "/coinbase-react/static/media/logo.7af1ac6253e5c5479fbaa292f2b1d845.svg",
+    "static/media/calendar.svg": "/coinbase-react/static/media/calendar.3b175062082472e81e832ab02ad7f957.svg",
+    "static/media/storage.svg": "/coinbase-react/static/media/storage.62fbf787d1e8c9c5826054f582a0f17b.svg",
+    "static/media/BTC-blue.svg": "/coinbase-react/static/media/BTC-blue.f64265f89f1f30fe924a167feb683c11.svg",
+    "static/media/mobile.svg": "/coinbase-react/static/media/mobile.f00b39f6d85f73ef0af0048d4af3826e.svg",
+    "static/media/link-account.svg": "/coinbase-react/static/media/link-account.c97eced044b50e12c1d207632cc69237.svg",
+    "static/media/start.svg": "/coinbase-react/static/media/start.c37c590b16a612d6466029a54b551743.svg",
+    "static/media/insurance.svg": "/coinbase-react/static/media/insurance.665eb236023cf33197d0be82c525d8a9.svg",
+    "index.html": "/coinbase-react/index.html",
+    "static/media/diamond.svg": "/coinbase-react/static/media/diamond.269c4f92775c79226face433ca6cb4bc.svg",
+    "static/media/best.svg": "/coinbase-react/static/media/best.22cd62d58df06ae07144c0efed2ddd00.svg",
+    "static/media/create-account.svg": "/coinbase-react/static/media/create-account.616225a5a6754ee36743c59978d3d972.svg",
+    "static/media/chart.svg": "/coinbase-react/static/media/chart.0446fac0cf88b1dfa95a774aaaf6b139.svg",
+    "main.a646cdea.js.map": "/coinbase-react/static/js/main.a646cdea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52144f7f.css",
+    "static/js/main.a646cdea.js"
+  ]
+}
