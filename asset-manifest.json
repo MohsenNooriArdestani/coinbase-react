@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/coinbase-react/static/css/main.52144f7f.css",
-    "main.js": "/coinbase-react/static/js/main.a646cdea.js",
+    "main.js": "/coinbase-react/static/js/main.c34feb63.js",
     "static/media/screenshot.webp": "/coinbase-react/static/media/screenshot.6ffc81153d3b1970f5a0.webp",
     "static/media/banner.webp": "/coinbase-react/static/media/banner.9b8b54316f0687f79fb3.webp",
     "static/media/phone.svg": "/coinbase-react/static/media/phone.28b175dc84e54ebe8308fe0f5a0b717c.svg",
@@ -18,10 +18,10 @@
     "static/media/best.svg": "/coinbase-react/static/media/best.22cd62d58df06ae07144c0efed2ddd00.svg",
     "static/media/create-account.svg": "/coinbase-react/static/media/create-account.616225a5a6754ee36743c59978d3d972.svg",
     "static/media/chart.svg": "/coinbase-react/static/media/chart.0446fac0cf88b1dfa95a774aaaf6b139.svg",
-    "main.a646cdea.js.map": "/coinbase-react/static/js/main.a646cdea.js.map"
+    "main.c34feb63.js.map": "/coinbase-react/static/js/main.c34feb63.js.map"
   },
   "entrypoints": [
     "static/css/main.52144f7f.css",
-    "static/js/main.a646cdea.js"
+    "static/js/main.c34feb63.js"
   ]
 }
