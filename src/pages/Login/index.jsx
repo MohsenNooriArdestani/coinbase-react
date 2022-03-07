@@ -17,7 +17,6 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import * as React from "react";
-import { ReactComponent as Logo } from "assets/images/logo.svg";
 import { OAuthButtonGroup } from "./OAuthButtonGroup";
 import { PasswordField } from "./PasswordField";
 
@@ -29,9 +28,6 @@ const Login = () => (
   >
     <Stack spacing="8">
       <Stack spacing="6" align="center">
-        <Link to="/">
-          <Logo height="35" />
-        </Link>
         <Stack spacing={{ base: "2", md: "3" }} textAlign="center">
           <Heading size={useBreakpointValue({ base: "xs", md: "sm" })}>
             Log in to your account

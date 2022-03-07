@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter basename={"/coinbase-react"}>
+    <BrowserRouter basename={process.env.BASE_NAME || "/coinbase-react"}>
       <AppRoutes />
     </BrowserRouter>
   );
